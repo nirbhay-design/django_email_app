@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z=pfgsqg^8ws#cv3&kpc+0#hmn3oqs0-(zdz*#)qtn@@276o7f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['email-app-sharma59.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['email-app-sharma59.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -43,13 +43,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'email_system.urls'

@@ -10,6 +10,10 @@ h3 {
     display:flex;
 }
 
+.open__button {
+    display:none;
+}
+
 .user_name {
     text-align:center;
     margin:10px 0px 10px 0px;
@@ -17,10 +21,23 @@ h3 {
 
 .side__bar {
     flex:0.25;
+    box-shadow:1px 1px 2px 1px gray;
+    padding:5px;
+    margin:0px 10px 0px 0px;
+    height:95vh;
 }
 
-.main__content {
-    flex:0.75;
+.mail__content {
+    flex:auto;
+    /* flex-grow: 1; */
+    height:95vh;
+    display:flex;
+    flex-direction:column;
+    overflow-y:scroll;
+}
+
+.mail__content::-webkit-scrollbar {
+    display:none
 }
 
 .selections {
@@ -29,6 +46,10 @@ h3 {
     border-radius:8px;
     padding:8px;
     display:flex;
+}
+
+.selections_ham {
+    margin-top:3vh;
 }
 
 .selections:hover{
@@ -41,11 +62,54 @@ h3 {
     font-size:20px;
 }
 
-h4, h5 {
+h4, h5, hr {
     margin:0px;
 }
 
 .mail__content__individual {
-    background-color:aliceblue;
-    box-shadow: 2px 2px 5px 2px gray;
+    cursor:pointer;
+    box-shadow:0.5px 0.5px 2px 0.2px gray;
+    padding:5px;
+
+}
+
+.mail__type {
+    margin-top:0px;
+}
+
+.mail__counts {
+    margin-bottom:2.5px;
+}
+
+.details__delete {
+    display:flex;
+    justify-content:space-between;
+}
+
+.mail__content__individual:hover {
+    box-shadow:1.5px 1.5px 0px 0.8px gray;
+    border:1px solid gray;
+    border-radius:5px;
+}
+
+.delete__mails {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.nomail_found {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+@media screen and (max-width:1000px) {
+    .side__bar {
+        display:none;
+    }
+
+    .open__button {
+        display:block;
+    }
 }
