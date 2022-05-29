@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'compose.css' %}"/>
+    <script src="https://kit.fontawesome.com/74cf293773.js" crossorigin="anonymous"></script>
+    <title>Compose</title>
+</head>
+<body>
+    {% if msg %}
+        <h3 class="user__msg"> {{msg}} </h3>
+    {% endif %}
+    <div class="compose__form__div">
+        <div class="myform">
+            <form action="/login/{{email}}/compose/" method='POST' class='compose__form'>  
+                {% csrf_token %}
+                <input class='myinput' type="text" name='email' id='remail' placeholder="Receiver Email" required> <hr>
+                <input class='myinput' type="text" name='subject' id='subject' placeholder="Subject"> <hr>
+                <textarea id='content__area' name='content__area' placeholder='content'></textarea> <hr>
+                <input class='send__mail' type='submit' name='submit' id='submit' value='Send'>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+*{
+    font-family: "Helvetica";
+}
+
+body {
+    background-color:white;
+    margin:0px;
+}
+
+.home__title {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.email__logo {
+    font-size:25px;
+    margin-left:4px;
+    color:crimson;
+}
+
+.first__div{
+    display:flex;
+    justify-content: space-between;
+}
+
+.first__text {
+    /* flex:0.6; */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    /* flex-grow:1; */
+    padding:10vh;
+}
+
+.login__div{
+    display:flex;
+    /* justify-content:space-between; */
+}
+
+.login__form__div {
+    width:38%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:15vw;
+}
+
+.login__form{
+    flex:0.7;
+    display:flex;
+    flex-direction:column;
+}
+
+.second_image{
+    margin-left:15vw;
+}
+
+.register__div{
+    display:flex;
+    flex-grow:1;
+    /* justify-content:space-between; */
+}
+
+.register__form__div {
+    width:38%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:15vw;
+}
+
+.register__form{
+    flex:0.7;
+    display:flex;
+    flex-direction:column;
+}
+
+.footer{
+    padding-top:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background-color:#141A46;
+    color:white;
+    margin:0px;
+}
+
+.envelope, .fa-github {
+    margin-top:2vh;
+    font-size:20px;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+.user_name, .user_email, .user_password {
+    border:none;
+    border-bottom:2px solid #101820FF;
+    padding:5px;
+    font-size:18px;
+    outline-width:0px;
+    margin:10px;
+    width:25vw;
+}
+
+.form__title {
+    margin:10px;
+    padding:5px;
+}
+
+.submit__button {
+    margin:10px;
+    width:12vw;
+    padding:10px 5px 10px 5px;
+    font-size:20px;
+    outline-width:0px;
+    background-color:#00203FFF;
+    color:#ADEFD1FF;
+    border-radius:10px;
+    border-color:#00203FFF;
+}
+
+.submit__button:hover{
+    cursor:pointer;
+}
+
+.response__message {
+    /* background-color:#97BC62FF; */
+    padding:0.1px 2px 0.1px 5px;
+    /* color:black; */
+}

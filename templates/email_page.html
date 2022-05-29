@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'email_page.css' %}"/>
+    <script src="https://kit.fontawesome.com/74cf293773.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Email Page</title>
+</head>
+<body>
+    <div class="open__button" onclick="show_menu()"> 
+        <i class="fa-solid fa-bars" style="color:black"></i> 
+    </div>
+    <div class="whole__page">
+        <div class="side__bar">
+            <div class="cross__button" onclick="hide_menu()"> <i class="fa-solid fa-xmark" style="color:black"></i> </div>
+            <h4 class="user_name">{{name}}</h4>
+            <div onclick="location.href='/login/{{email}}/compose/'" class="selections">
+                <i class="fa-solid fa-location-arrow"></i>
+                <h3> Compose </h3>    
+            </div>
+            <div onclick="location.href='/login/{{email}}/inbox/'" class="selections">
+                <i class="fa-solid fa-inbox"></i>
+                <h3> Inbox </h3>    
+            </div>
+            <div onclick="location.href='/login/{{email}}/sent/'" class="selections">
+                <i class="fa-solid fa-paper-plane"></i>
+                <h3> Sent </h3>    
+            </div>
+            <div onclick="location.href='/login/{{email}}/deleted/'" class="selections">
+                <i class="fa-solid fa-trash"></i>
+                <h3> Deleted </h3>    
+            </div>
+            <div onclick="location.href='/'" class="selections">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <h3> Logout </h3>    
+            </div>
+        </div>
+        <div class="mail__content">
+            <h2 class="mail__counts"> Total Mails: {{len_mail}} </h2>
+            <h2 class="mail__type"> {{type}} </h2>
+            {% if not len_mail %}
+                <div class="nomail_found" >
+                    <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?size=626&ext=jpg&ga=GA1.2.520233251.1653579504" alt='no mails found' width=500/>
+                </div>
+            {% endif %}
+            {% if inbox %}
+                {% for emails in mails %}
+                    <div class='mail__content__individual' onclick="location.href='read/{{emails.id}}'">
+                        <div class="details__delete">
+                            <div class="details">
+                                <h4 class"email__content"> from: {{emails.from_name}} ({{emails.from_email}}) </h4>
+                                <h5 class="email__content"> subject: {{emails.subj}} </h5>
+                                <h5 class="email__contenet"> dated: {{emails.recv_time}} </h5>
+                            </div>
+                            <div class="delete__mails">
+                                <a href="delete/{{emails.id}}"> <i class="fa-solid fa-trash-can"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% elif sent %}
+                {% for emails in mails %}
+                    <div class='mail__content__individual' onclick="location.href='read/{{emails.id}}'">
+                        <div class="details__delete">
+                            <div class="details">
+                                <h4 class"email__content"> to: {{emails.to_name}} ({{emails.to_email}}) </h4>
+                                <h5 class="email__content"> subject: {{emails.subj}} </h5>
+                                <h5 class="email__contenet"> dated: {{emails.recv_time}} </h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for emails in mails %}
+                    <div class='mail__content__individual' onclick="location.href='read/{{emails.id}}'">
+                        <div class="details__delete">
+                            <div class="details">
+                                <h4 class"email__content"> from: {{emails.from_name}} ({{emails.from_email}}) </h4>
+                                <h5 class="email__content"> subject: {{emails.subj}} </h5>
+                                <h5 class="email__contenet"> dated: {{emails.recv_time}} </h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <script src="{% static 'email_page.js' %}"></script>
+</body>
+</html>

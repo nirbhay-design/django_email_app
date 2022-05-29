@@ -1,0 +1,51 @@
+* {
+    font-family:Helvetica, sans-serif;
+}
+
+h3 {
+    margin:0px;
+}
+
+.whole__page {
+    display:flex;
+}
+
+.user_name {
+    text-align:center;
+    margin:10px 0px 10px 0px;
+}
+
+.side__bar {
+    flex:0.25;
+}
+
+.main__content {
+    flex:0.75;
+}
+
+.selections {
+    cursor:pointer;
+    background-color:white;
+    border-radius:8px;
+    padding:8px;
+    display:flex;
+}
+
+.selections:hover{
+    background-color:#F5F5F5;
+}
+
+.fa-solid {
+    color:red;
+    margin:0px 5px 0px 3px;
+    font-size:20px;
+}
+
+h4, h5 {
+    margin:0px;
+}
+
+.mail__content__individual {
+    background-color:aliceblue;
+    box-shadow: 2px 2px 5px 2px gray;
+}

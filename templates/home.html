@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}"/>
+    <script src="https://kit.fontawesome.com/74cf293773.js" crossorigin="anonymous"></script>
+    <title>Home Page</title>
+</head>
+<body>
+    {% comment %} <i class="fa-solid fa-envelope email__logo"></i> {% endcomment %}
+    <div class="response__message" style='background-color:{{color}};color:{{color1}}'>
+        <h3> {{message}} </h3>
+    </div>
+    <div class="home__title">
+        <h1 class="home__title_content">Email</h1>
+        <i class="fa-solid fa-envelope email__logo"></i>
+    </div>
+    <div class="first__div"> 
+        <div class="first__text">
+            <h3>Though many email systems exists now a days, this is a try to mimic the behaviour of emails websites in a ethical manner, the whole email website is written in Django (a python framework for web developement), HTML and CSS purely, There is no involvement of bootstrap in the application, Hope you enjoy the UI and ease of usage of our app</h3>            
+        </div>
+        <div class="first__image"> 
+            <img src="https://img.freepik.com/free-vector/email-campaign-concept-illustration_114360-1633.jpg?size=626&ext=jpg&ga=GA1.2.520233251.1653579504" width=600>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="login__div">
+        <div class='second_image'>
+            <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5425.jpg?size=338&ext=jpg&ga=GA1.2.520233251.1653579504" width=500/>
+        </div>
+        <div class="login__form__div">
+            <form action='login/' method='post' class="login__form">
+                {% csrf_token %}
+                <h3 class="form__title"> Login </h3>
+                <input type='email' placeholder='email' name='email' class='user_email' required/>
+                <input type='password' placeholder='password' name='password' class='user_password' required/>
+                <input type='submit' value='Login' class="submit__button" />
+            </form>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="register__div">
+        <div class="register__form__div">
+            <form action='register/' method='post' class='register__form'>
+                {% csrf_token %}
+                <h3 class="form__title"> Register </h3>
+                <input type='text' placeholder='name' name='name' class='user_name' required/>
+                <input type='email' placeholder='email' name='email' class='user_email' required/>
+                <input type='password' placeholder='password' name='password' class='user_password' required/>
+                <input type='password' placeholder='confirm password' name='confirm_password' class='user_password' required/>
+                <input type='submit' value='Register'  class="submit__button"/>
+            </form>
+        </div>
+        <div class='third_image'>
+            <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=2000" width=500/>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="contact__icons">
+            <a href="mailto:sharma.59@iitj.ac.in"> <i class="fa-solid fa-envelope envelope"></i> </a>
+            <a href="https:github.com/nirbhay-design"> <i class="fa-brands fa-github"></i> </a>
+        </div>
+        <h3> © Nirbhay Sharma </h3>
+    </div>
+</body>
+</html>
